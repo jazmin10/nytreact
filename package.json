@@ -2,37 +2,30 @@
   "name": "nytreact",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "public/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
     "dev": "webpack & node server",
+    "start": "node server.js",
     "build": "webpack -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jazmin10/nytreact.git"
   },
   "author": "Jazmin Estrada",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jazmin10/nytreact/issues"
-  },
-  "homepage": "https://github.com/jazmin10/nytreact#readme",
   "dependencies": {
-    "axios": "^0.16.2",
-    "body-parser": "^1.17.2",
+    "axios": "^0.12.0",
     "express": "^4.15.4",
     "mongoose": "^4.11.9",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-router": "^4.2.0"
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-router": "^2.4.1",
+    "request": "^2.72.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^3.5.5"
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "json-loader": "^0.5.4",
+    "webpack": "^1.13.1"
   }
 }

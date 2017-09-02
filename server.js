@@ -34,6 +34,8 @@ db.once("open", function() {
 
 // -------------------------------------------------
 
+// Requiring our routes
+require("./routes/api-routes.js")(app);
 
 // -------------------------------------------------
 
