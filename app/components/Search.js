@@ -3,17 +3,18 @@ import React from "react";
 // Including the Link component from React Router to navigate within our application without full page reloads
 import {Link} from "react-router";
 
+import Query from "./Query";
+import Results from "./Results";
 
-// Create the Main component
-
+// Create the Search component
 export default class Search extends React.Component {
 
-  // Here we render the component
+  // Render the component
   render() {
-
     return (
-      <div className="container">
-        
+      <div>
+        <Query />
+        <Results />
       </div>
     );
   }

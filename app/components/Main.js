@@ -4,7 +4,6 @@ import React from "react";
 import {Link} from "react-router";
 
 // Create the Main component
-
 export default class Main extends React.Component {
 
   constructor(props){

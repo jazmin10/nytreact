@@ -48,7 +48,7 @@ export default class SavedArticles extends React.Component {
           <div className="panel panel-default">
 
             <div className="panel-heading">
-              <h3 className="panel-title">SAVED ARTICLES</h3>
+              <h3 className="panel-title"><strong>Saved Articles</strong></h3>
             </div>
 
             <div className="panel-body">
