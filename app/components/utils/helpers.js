@@ -9,7 +9,7 @@ var helper = {
 			// response.data.date = moment(response.date, moment.ISO_8601).format("MMM DD YYYY hh:mm A");
 			for (let i=0; i < response.data.length; i++){
 				// console.log(response.data[i].date);
-				response.data[i].date = moment(response.data[i].date, moment.ISO_8601).format("MMM DD YYYY, hh:mm A");
+				response.data[i].date = moment(response.data[i].date, moment.ISO_8601).format("MMM DD, YYYY | hh:mm A");
 				// console.log(response.data[i].date)
 			}
 			// console.log(response.data);
@@ -44,8 +44,33 @@ var helper = {
 		
 
 		return axios.get(url).then(function(response) {
-			return response.data.response.docs;
+			var articleLimit = 5;
+			var newData = response.data.response.docs;
+      var newResults = [];
+
+      for (let j=0; j < articleLimit; j++){
+      	if (newData[j].pub_date) {
+      		newData[j].pub_date = moment(newData[j].pub_date, moment.ISO_8601).format("MMM DD, YYYY");
+      	}
+      	else {
+      		newData[j].pub_date = "not available";
+      	}
+
+        newResults.push(newData[j]);
+      }
+
+			return newResults;
 		});
+	},
+
+	saveArticle: function(article) {
+		// console.log(article);
+
+		let {headline: {main: title}, web_url: url} = article;
+		// console.log(title);
+		// console.log(url);
+
+		return axios.post("/save-article", {title: title, url: url})
 	}
 
 }

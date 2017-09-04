@@ -1,16 +1,15 @@
-// Include React
+// Import dependencies
 import React from "react";
-// Including the Link component from React Router to navigate within our application without full page reloads
-import {Link} from "react-router";
+import helper from "./utils/helpers";
 
+// Import children components
 import Query from "./Query";
 import Results from "./Results";
 
-import helper from "./utils/helpers";
-
-// Create the Search component
+// Creates and exports the Search component
 export default class Search extends React.Component {
 
+  // Initial state setup
   constructor(props) {
     super(props);
 
@@ -18,51 +17,71 @@ export default class Search extends React.Component {
       topic: "",
       startyr: "",
       endyr: "",
-      results: []
+      results: [] 
     }
 
     this.setSearch = this.setSearch.bind(this);
+    this.findArticle = this.findArticle.bind(this);
   }
 
+  // Sets the search parameters for the nyt api search
   setSearch(topic, startyr, endyr) {
-    // console.log(topic, startyr, endyr);
 
+    // Sets state for topic, startyr, endyr according to user input
+    // from the search form in the Query Component
     this.setState({topic: topic, startyr: startyr, endyr: endyr});
-
   }
 
+  // Saves the article to the database and removes it from the page
+  findArticle(event){
+
+    // event.target.value is obtained from the Results component,
+    // it represents the index of the article in the results array
+    var index = event.target.value
+
+    // Saves the article to the database and then removes it from the
+    // results array so that it won't be displayed any longer
+    helper.saveArticle(this.state.results[index]).then(() => {
+
+      var currentArticles = this.state.results;
+      currentArticles.splice(index,1);
+
+      this.setState({results: currentArticles});
+    });
+  }
+
+  // Everytime the state of the component is updated...
   componentDidUpdate(prevProps, prevState){
-    // console.log("updated");
+    
+    // If search parameters changed...
     if (prevState.topic !== this.state.topic || prevState.startyr !== this.state.startyr 
       || prevState.endyr !== this.state.endyr) {
-      // console.log("find articles");
+      
+      // Run a new nyt search to obtain new results
       helper.runNytSearch(this.state.topic, this.state.startyr, this.state.endyr).then(response => {
-      // console.log(response);
-
-        var articleLimit = 5;
-
-        var newResults = [];
-
-        for (let j=0; j < articleLimit; j++){
-          newResults.push(response[j]);
+        
+        // If results changed from previous results, set results array to the new data
+        if (response !== this.state.results) {
+          this.setState({results: response});
         }
-        console.log(newResults);
-        this.setState({results: newResults});
       });
     }
   }
   
-  // Render the component
+  // Render the component: displays search form/results panel
   render() {
+
+    // If we have data in the results array, display the results panel
     if (this.state.results.length !== 0) {
       return (
         <div>
-          <Query setSearch={this.setSearch}/>
-          <Results />
+          <Query setSearch={this.setSearch} />
+          <Results newResults={this.state.results} findArticle={this.findArticle} />
         </div>
       );
     }
 
+    // If results arrays is empty, then only display search form
     return (
       <div>
         <Query setSearch={this.setSearch}/>
@@ -70,6 +89,4 @@ export default class Search extends React.Component {
     );
   }
 }
-
-// export default Main;
 

@@ -1,9 +1,8 @@
-// Include React
+// Import dependencies
 import React from "react";
-
 import helper from "./utils/helpers";
 
-// Create the SavedArticles component
+// Creates and exports the SavedArticles component
 export default class SavedArticles extends React.Component {
 
   // Inital state setup
@@ -23,7 +22,8 @@ export default class SavedArticles extends React.Component {
     // Grab the saved articles from the database
     helper.allArticles().then(data => {
       
-      this.setState({results: data}); // set articles from the db to the results array
+      // Sets articles from the db to the results array
+      this.setState({results: data}); 
     });
   }
 
@@ -31,17 +31,18 @@ export default class SavedArticles extends React.Component {
   removeArticle(event){
 
     // Delete the article from the dabase
-    helper.removeArticle(event.target.value).then( () => {
+    helper.removeArticle(event.target.value).then(() => {
 
       // Grab articles from the db in order to re-render component
       helper.allArticles().then(data => this.setState({results: data}));
     });
   }
 
-  // Render the component
+  // Render the component: displays the saved articles 
+  // or notifies user to start saving articles
   render() {
 
-    // If there are articles saved...
+    // If there are articles saved, it renders a panel with the articles
     if (this.state.results.length !== 0) {
       return (
         <div>
@@ -52,13 +53,25 @@ export default class SavedArticles extends React.Component {
             </div>
 
             <div className="panel-body">
-          {/* for each article saved in the database render in a well */}
+          {/* for each article saved in the database, render it in a well */}
               {this.state.results.map(search => {
                 return (
                   <div className="well" key={search._id}>
                     <h4>{search.title}</h4>
-                    <button value={search._id} className="btn btn-default btn-danger" onClick={this.removeArticle}>delete</button>
-                    <a href={search.url} target="_blank"><button className="btn btn-default btn-primary">view article</button></a>
+
+                    <button 
+                      value={search._id} 
+                      className="btn btn-default btn-danger" 
+                      onClick={this.removeArticle}>
+                        Delete
+                    </button>
+
+                    <a href={search.url} target="_blank">
+                      <button className="btn btn-default btn-primary">
+                        View Article
+                      </button>
+                    </a>
+
                     <p>Saved on: {search.date}</p>
                   </div>
                 );
@@ -82,5 +95,5 @@ export default class SavedArticles extends React.Component {
   }
 }
 
-// export default Main;
+
 

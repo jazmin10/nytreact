@@ -1,16 +1,16 @@
-// Include React
+// Include dependencies
 import React from "react";
-// Including the Link component from React Router to navigate within our application without full page reloads
 import {Link} from "react-router";
 
-// Create the Main component
+// Creates and exports the Main component
 export default class Main extends React.Component {
 
+  // Initial state setup
   constructor(props){
     super(props);
   }
 
-  // Here we render the component
+  // Render the component: displays navbar and jumbotron
   render() {
 
     return (
@@ -38,6 +38,7 @@ export default class Main extends React.Component {
         </div>
 
         <div>
+          {/* Displays search component or  savedArticles component */}
           {this.props.children}
         </div>
 
@@ -46,5 +47,4 @@ export default class Main extends React.Component {
   }
 }
 
-// export default Main;
 
