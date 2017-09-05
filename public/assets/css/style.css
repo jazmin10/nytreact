@@ -1,0 +1,190 @@
+body {
+	background: #b9a07e;
+}
+
+/* ============ MAIN COMPONENT ============ */
+/* Navbar */
+.navbar {
+	background: #333333;
+	border-color: #333333;
+	margin: 0px; 
+}
+
+#logo {
+	color: #b9a07e;
+	font-family: 'IM Fell English SC', serif;
+}
+
+.navbar-default .navbar-nav li a {
+    color: white;
+    font-size: medium;
+    font-family: 'IM Fell English SC', serif;
+    font-size: 18px;
+}
+
+.navbar-default .navbar-nav li a:hover {
+    color: #b9a07e;
+    font-size: medium;
+    font-size: 22px;
+}
+
+.navbar-default .navbar-nav li a:focus {
+    color: #b9a07e;
+    font-size: medium;
+    font-size: 22px;
+}
+
+/* Jumbotron */
+.jumbotron {
+	background-image: url("../images/desk.jpg");
+	background-size: 100% 140%;
+	height: 350px;
+}
+
+.jumbotron div {
+	background: rgba(0, 0, 0, 0.22);
+    width: 75%;
+    margin: auto;
+    padding-bottom: 20px;
+    padding-top: 1px;
+}
+
+.jumbotron h1 {
+	color: white;
+	text-align: center;
+	font-family: 'IM Fell English SC', serif;
+}
+
+.jumbotron h2 {
+	color: white;
+	text-align: center;
+	font-family: 'IM Fell English SC', serif;
+}
+
+/* ============ SAVEDARTICLES/RESULTS COMPONENT ============ */
+.panel {
+	background: none;
+	border-color: #333333;
+}
+
+/* Panel Heading */
+.panel-default .panel-heading {
+	background: #333333;
+	border-color: #333333;
+	font-family: 'IM Fell English SC', serif;
+	text-align: center;
+}
+
+.panel-default .panel-heading h3 {
+	color: white;
+	font-size: 20px;
+}
+
+/* Panel Body */
+.well {
+	background-image: url("../images/dark_embroidery/dark_embroidery.png");
+	border-color: #333333;
+	/*color: white;*/
+}
+
+.well h4 {
+	color: #b9a07e;
+	display: inline-block;
+	font-family: 'IM Fell English SC', serif;
+	font-size: 20px;
+}
+
+.well p {
+	color: antiqueWhite;
+	font-family: 'IM Fell English SC', serif;
+	font-size: 18px;
+}
+
+.well button {
+	float: right;
+	margin-right: 2px;
+	font-family: 'IM Fell English SC', serif;
+}
+
+.view {
+	/*background: #b9a07e;*/
+	background: antiqueWhite;
+    color: #333333;
+    border-color: #b9a07e;
+}
+
+.view:hover {
+	/*background: #333333;*/
+	background: antiqueWhite;
+    color: #b9a07e;
+    border-color: #b9a07e;
+}
+
+.view:focus {
+	/*background: #333333;*/
+	background: antiqueWhite;
+    color: #b9a07e;
+    border-color: #b9a07e;
+}
+
+/* No Results Well */
+#no-saved {
+	font-family: 'IM Fell English SC', serif;
+	text-align: center;
+	font-size: 30px;
+}
+
+/* ============ QUERY COMPONENT ============ */
+.form-group {
+	font-family: 'IM Fell English SC', serif;
+}
+
+/* Form */
+.form-group h5 {
+	font-size: 15px;
+}
+
+.form-group input {
+	background: #b9a07e;
+	font-size: 20px;
+	border-color: antiqueWhite;
+}
+
+.form-group button {
+	float: right;
+	font-family: 'IM Fell English SC', serif;
+	font-size: 18px;
+	background: #333333;
+    color: #b9a07e;
+    border-color: #333333;
+}
+
+.form-group button:hover {
+	background: antiqueWhite;
+    color: #333333;
+    border-color: #333333;
+}
+
+.form-group button:focus {
+	background: #333333;
+    color: #b9a07e;
+    border-color: #333333;
+}
+
+.save {
+	background: #333333;
+    border-color: #b9a07e;
+    color: antiquewhite;
+}
+
+.save:hover {
+	background: #b9a07e;
+    border-color: #333333;
+    color: #333333;
+}
+
+.save:focus {
+	background: #333333;
+    border-color: #b9a07e;
+    color: antiquewhite;
+}

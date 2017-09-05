@@ -17,7 +17,7 @@ export default class Results extends React.Component {
         <div className="panel panel-default">
 
 				  <div className="panel-heading">
-				    <h3 className="panel-title"><strong>Results</strong></h3>
+				    <h3 className="panel-title"><strong>RESULTS</strong></h3>
 				  </div>
 
 		  		<div className="panel-body">
@@ -31,14 +31,14 @@ export default class Results extends React.Component {
 
 		              <button 
 		              	value={i} // Set the value to the index of the article
-		              	className="btn btn-default btn-danger"
+		              	className="btn btn-default btn-danger save"
 		              	// When the button is clicked, it will trigger the findArticle
 		              	// function from the Search component
 		              	onClick={this.props.findArticle}> 
 		              	Save
 		              </button>
 
-		              <a href={search.web_url} target="_blank"><button className="btn btn-default btn-primary">view article</button></a>
+		              <a href={search.web_url} target="_blank"><button className="btn btn-default btn-primary view">View Article</button></a>
 		              
 		              <p>Publication date: {search.pub_date}</p>
 		            </div>

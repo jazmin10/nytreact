@@ -49,14 +49,14 @@ export default class Query extends React.Component {
 	        <div className="panel panel-default">
 
 						<div className="panel-heading">
-			    		<h3 className="panel-title"><strong>Search</strong></h3>
+			    		<h3 className="panel-title"><strong>SEARCH</strong></h3>
 			  		</div>
 
 			  		<div className="panel-body">
 				    	<form onSubmit={this.handleSubmit}>
 		            <div className="form-group">
 
-		            	<h5>Topic</h5>
+		            	<h5>TOPIC</h5>
 		            	<input
 		               	value={this.state.topic}
 		                type="text"
@@ -66,7 +66,7 @@ export default class Query extends React.Component {
 		                required
 		              />
 
-	              	<h5>Start Year (Optional)</h5>
+	              	<h5>START YEAR (Optional)</h5>
 	              	<input
 		               	value={this.state.startyr}
 		                type="text"
@@ -75,7 +75,7 @@ export default class Query extends React.Component {
 		                onChange={this.handleChange}
 				          />
 
-		              <h5>End Year (Optional)</h5>
+		              <h5>END YEAR (Optional)</h5>
 			            <input
 			            	value={this.state.endyr}
 			            	type="text"

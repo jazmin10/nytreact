@@ -45,11 +45,11 @@ export default class SavedArticles extends React.Component {
     // If there are articles saved, it renders a panel with the articles
     if (this.state.results.length !== 0) {
       return (
-        <div>
+        <div className="container">
           <div className="panel panel-default">
 
             <div className="panel-heading">
-              <h3 className="panel-title"><strong>Saved Articles</strong></h3>
+              <h3 className="panel-title"><strong>SAVED ARTICLES</strong></h3>
             </div>
 
             <div className="panel-body">
@@ -67,7 +67,7 @@ export default class SavedArticles extends React.Component {
                     </button>
 
                     <a href={search.url} target="_blank">
-                      <button className="btn btn-default btn-primary">
+                      <button className="btn btn-default btn-primary view">
                         View Article
                       </button>
                     </a>
@@ -85,9 +85,11 @@ export default class SavedArticles extends React.Component {
 
     // If there no articles, notify the user there are no articles saved
     return (
-      <div className="panel panel-default">
-        <div className="panel-body">
-        No saved articles! Head to the Search page.
+      <div className="container">
+        <div className="panel panel-default">
+          <div className="panel-body" id="no-saved">
+          No saved articles! Head to the Search page.
+          </div>
         </div>
       </div>
     );

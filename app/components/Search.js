@@ -74,7 +74,7 @@ export default class Search extends React.Component {
     // If we have data in the results array, display the results panel
     if (this.state.results.length !== 0) {
       return (
-        <div>
+        <div className="container">
           <Query setSearch={this.setSearch} />
           <Results newResults={this.state.results} findArticle={this.findArticle} />
         </div>
@@ -83,7 +83,7 @@ export default class Search extends React.Component {
 
     // If results arrays is empty, then only display search form
     return (
-      <div>
+      <div className="container">
         <Query setSearch={this.setSearch}/>
       </div>
     );

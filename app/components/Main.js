@@ -14,15 +14,15 @@ export default class Main extends React.Component {
   render() {
 
     return (
-      <div classNameName="container">
+      <div>
         <nav className="navbar navbar-default">
           <div className="container-fluid">
 
             <div className="navbar-header">
-              <a className="navbar-brand" href="#">NYT Article Scrubber</a>
+              <Link to="/"><div className="navbar-brand" id="logo">NYT Article Scrubber</div></Link>
             </div>
 
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div className="navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
                   <li><Link to="/search">Search</Link></li>
                   <li><Link to="/saved-articles">Saved Articles</Link></li>
@@ -33,8 +33,10 @@ export default class Main extends React.Component {
         </nav>
 
         <div className="jumbotron">
+          <div>
           <h1>New York Times Articles Scrubber</h1>
           <h2>Search for and annotate articles of interest!</h2>
+          </div>
         </div>
 
         <div>
