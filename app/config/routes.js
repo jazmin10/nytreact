@@ -1,3 +1,7 @@
+/* NYT React Search - New York Times Article Search Application
+Initializing single page routing */
+
+
 // Include the React library
 import React from "react";
 

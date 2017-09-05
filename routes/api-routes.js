@@ -1,3 +1,6 @@
+/* NYT React Search - New York Times Article Search Application
+Express api-routes with mongoose queries */
+
 // Requiring our models
 var Article = require("../models/Article.js");
 

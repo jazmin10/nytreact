@@ -1,3 +1,6 @@
+/* NYT React Search - New York Times Article Search Application
+Rendering to the DOM */
+
 // Include the Main React Dependencies
 import React from "react";
 import ReactDOM from "react-dom";

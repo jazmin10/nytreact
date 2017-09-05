@@ -1,3 +1,6 @@
+/* NYT React Search - New York Times Article Search Application
+Initializing Article schema and model (Mongodb) */
+
 // Require mongoose
 var mongoose = require("mongoose");
 

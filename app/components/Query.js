@@ -1,3 +1,6 @@
+/* NYT React Search - New York Times Article Search Application
+Initializing Query component */
+
 // Include React
 import React from "react";
 

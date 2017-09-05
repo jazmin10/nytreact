@@ -1,3 +1,6 @@
+/* NYT React Search - New York Times Article Search Application
+Initializing SavedArticles component */
+
 // Import dependencies
 import React from "react";
 import helper from "./utils/helpers";
