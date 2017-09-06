@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack & node server",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack -w"
   },
   "author": "Jazmin Estrada",
   "license": "ISC",
@@ -18,7 +19,8 @@
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-router": "^2.4.1",
-    "request": "^2.72.0"
+    "request": "^2.72.0",
+    "webpack": "^1.13.1"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",
