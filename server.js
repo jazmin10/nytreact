@@ -24,9 +24,15 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("public"));
 
 // -------------------------------------------------
-
 // MongoDB Configuration
-mongoose.connect("mongodb://localhost/nytreact");
+
+// Local connection
+// mongoose.connect("mongodb://localhost/nytreact");
+
+// Heroku mongolab configuration
+// mongolab - mongodb://heroku_rp895cfm:844jk0ecnev7ffp3doijc4igs1@ds121674.mlab.com:21674/heroku_rp895cfm
+mongoose.connect("mongodb://heroku_rp895cfm:844jk0ecnev7ffp3doijc4igs1@ds121674.mlab.com:21674/heroku_rp895cfm");
+
 var db = mongoose.connection;
 
 db.on("error", function(err) {
