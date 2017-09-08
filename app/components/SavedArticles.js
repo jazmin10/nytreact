@@ -75,7 +75,7 @@ export default class SavedArticles extends React.Component {
                       </button>
                     </a>
 
-                    <p>Saved on: {search.date}</p>
+                    <p>Publication Date: {search.date}</p>
                   </div>
                 );
               })}

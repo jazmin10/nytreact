@@ -26,6 +26,7 @@ module.exports = function(app){
 
 		results.title = createReq.body.title;
 		results.url = createReq.body.url;
+		results.date = createReq.body.date;
 				
 		// Create new instance of Article Model
 		var newArticle = new Article(results);

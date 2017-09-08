@@ -20,8 +20,9 @@ var ArticleSchema = new Schema({
 
   },
   date: {
-    type: Date,
-    default: Date.now
+    type: String
+    // ,
+    // default: Date.now
   }
 });
 

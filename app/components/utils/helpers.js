@@ -17,7 +17,9 @@ var helper = {
 			
 			// Format saved date using moment. Ex: Sep 21, 2016 | 5:03PM
 			for (let i=0; i < response.data.length; i++){
-				response.data[i].date = moment(response.data[i].date, moment.ISO_8601).format("MMM DD, YYYY | hh:mm A");
+				if (response.data[i].date !== "not available") {
+					response.data[i].date = moment(response.data[i].date, "YYYY-MM-DDTHH:mm:ss[Z]").format("MMM DD, YYYY");
+				}
 			}
 			
 			// return saved articles
@@ -81,10 +83,14 @@ var helper = {
 	// Saves articles to the database
 	saveArticle: function(article) {
 
-		let {headline: {main: title}, web_url: url} = article;
+		let {headline: {main: title}, web_url: url, pub_date: date} = article;
+
+		if (date !== "not available") {
+			date = moment(date, "MMM DD, YYYY").format("YYYY-MM-DDTHH:mm:ss[Z]");
+		}
 	
 		// Return new article information (not needed, but maybe for future development)
-		return axios.post("/save-article", {title: title, url: url})
+		return axios.post("/save-article", {title: title, url: url, date: date})
 	}
 
 }
